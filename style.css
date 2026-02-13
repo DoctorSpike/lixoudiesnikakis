@@ -1,131 +1,105 @@
-/* =========================
-   Reset
-========================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+    --brand-purple: #982598;
+    --brand-pink: #b8349e;
+    --dark-navy: #15173D;
+    --soft-white: #F1E9E9;
+    --transition: all 0.3s ease;
 }
-
-/* =========================
-   Base
-========================= */
 
 body {
-    background-color: #F1E9E9;
+    margin: 0;
     font-family: "Nunito", sans-serif;
+    background-color: var(--soft-white);
 }
 
-/* =========================
-   Layout - Container 1
-========================= */
-
-.cont-1 {
+/* The Main Grid Container */
+.hero-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    padding: 40px 20px;
-    background: linear-gradient(135deg, #982598 0%, #b8349e 100%);
-    color: #15173D;
-    box-shadow: 0 4px 15px rgba(152, 37, 152, 0.2);
+    /* This creates 2 columns on desktop, 1 on mobile automatically */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     align-items: center;
-    text-align: center;
+    gap: 40px;
+    padding: 60px 10%;
+    background: linear-gradient(135deg, var(--brand-purple) 0%, var(--brand-pink) 100%);
+    color: white;
+    min-height: 400px;
 }
 
-.cnt-1-flex {
+/* Left Side: Text Styling */
+.hero-text {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    gap: 20px;
+}
+
+.main-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    letter-spacing: 2px;
+    line-height: 1.1;
+    color: var(--dark-navy);
+}
+
+.tagline {
+    font-size: 1.4rem;
+    font-weight: 300;
+    max-width: 500px;
+}
+
+/* Right Side: Image Styling */
+.hero-image {
+    display: flex;
     justify-content: center;
 }
 
-/* =========================
-   Typography
-========================= */
-
-#cont1-col1 {
-    grid-column: 1 / -1;
-    font-size: 3rem;
-    letter-spacing: 3px;
+.hero-image img {
+    width: 100%;
+    max-width: 350px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 50%; /* Perfect Circle */
+    border: 8px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    transition: var(--transition);
 }
 
-#cont1-col2 {
-    grid-column: 1 / -1;
-    font-size: 1.5rem;
-    max-width: 800px;
-    margin: 0 auto;
+.hero-image img:hover {
+    transform: scale(1.03);
+    border-color: var(--dark-navy);
 }
 
-#cont1-col4 {
-    grid-column: 1 / -1;
-    font-size: 2rem;
-    margin-top: 20px;
-}
-
-#cont1-col6 {
-    grid-column: 1 / -1;
+/* Location & Phone Styling */
+.location-info h3 {
     font-size: 1.8rem;
+    margin-bottom: 15px;
 }
 
-#cont1-col7 {
-    grid-column: 1 / -1;
-    font-size: 0.9rem;
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--dark-navy);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: var(--transition);
 }
 
-/* =========================
-   Image
-========================= */
-
-#cont1-col3 {
-    grid-column: 1 / -1;
-    max-width: 300px;
-    width: 100%;
-    border-radius: 50%;
-    border: 2px solid #15173D;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+.contact-link:hover {
+    background: white;
+    color: var(--brand-purple);
+    transform: translateY(-3px);
 }
 
-/* =========================
-   Phone Icon
-========================= */
-
-#cont1-col5 img {
-    width: 35px;
-}
-
-/* =========================
-   Divider
-========================= */
-
-#cont1-col9 {
-    grid-column: 1 / -1;
-    width: 100%;
-    max-width: 1000px;
-    border-top: 5px solid #15173D;
-    border-radius: 5px;
-    margin: 20px auto;
-}
-
-/* =========================
-   Map Text
-========================= */
-
-#cont1-col10 {
-    grid-column: 1 / -1;
-    font-size: 1.2rem;
-    margin-top: 10px;
-}
-
-/* =========================
-   Map
-========================= */
-
-#cont1-col8 {
-    grid-column: 1 / -1;
-    width: 100%;
-    max-width: 1000px;
-    height: 400px;
-    border-radius: 10px;
-    margin: 20px auto;
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .hero-container {
+        text-align: center;
+        padding: 40px 20px;
+    }
+    .hero-text {
+        align-items: center;
+    }
 }
