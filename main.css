@@ -11,3 +11,14 @@ body {
     font-family: "Nunito", sans-serif;
     background-color: var(--soft-white);
 }
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    overflow-x: hidden; /* Εγγύηση ότι δεν θα υπάρξει οριζόντιο scroll */
+    width: 100%;
+}

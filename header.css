@@ -1,74 +1,74 @@
-/* The Main Grid Container */
+/* Το Κεντρικό Container (Hero) */
 .hero-container {
     display: grid;
-    /* This creates 2 columns on desktop, 1 on mobile automatically */
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     align-items: center;
-    gap: 40px;
-    padding: 60px 10%;
+    gap: 2rem;
+    padding: 3rem clamp(1rem, 5%, 5rem);
+
     background: linear-gradient(135deg, var(--brand-purple) 0%, var(--brand-pink) 100%);
     color: white;
-    min-height: 400px;
+    min-height: 80vh;
 }
 
-/* Left Side: Text Styling */
 .hero-text {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 1.5rem;
 }
 
 .main-title {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    letter-spacing: 2px;
+    font-size: clamp(2rem, 8vw, 4rem);
+    letter-spacing: 1px;
     line-height: 1.1;
     color: var(--dark-navy);
+    margin: 0;
 }
 
 .tagline {
-    font-size: 1.4rem;
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
     font-weight: 300;
-    max-width: 500px;
+    max-width: 550px;
+    line-height: 1.6;
 }
 
-/* Right Side: Image Styling */
 .hero-image {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .hero-image img {
-    width: 100%;
-    max-width: 350px;
+    width: 70%;
+    max-width: 380px;
     aspect-ratio: 1/1;
     object-fit: cover;
-    border-radius: 50%; /* Perfect Circle */
+    border-radius: 50%;
     border: 8px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
     transition: var(--transition);
 }
 
 .hero-image img:hover {
-    transform: scale(1.03);
-    border-color: var(--dark-navy);
+    transform: scale(1.05);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+    border: 8px solid rgba(255, 255, 255, 0.4);
 }
-
-/* Location & Phone Styling */
 .location-info h3 {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    margin-bottom: 1rem;
 }
 
 .contact-link {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     background: var(--dark-navy);
     color: white;
-    padding: 12px 25px;
+    padding: 0.8rem 1.8rem;
     border-radius: 50px;
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
     font-weight: bold;
     transition: var(--transition);
 }
@@ -76,16 +76,20 @@
 .contact-link:hover {
     background: white;
     color: var(--brand-purple);
-    transform: translateY(-3px);
+    transform: translateY(-5px);
 }
 
-/* Mobile Adjustments */
+/* 5. Media Query για μικρές οθόνες (Κεντράρισμα) */
 @media (max-width: 768px) {
     .hero-container {
         text-align: center;
-        padding: 40px 20px;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
     }
     .hero-text {
-        align-items: center;
+        align-items: center; /* Κεντράρει το κείμενο και το κουμπί */
+    }
+    .tagline {
+        max-width: 100%; /* Επιτρέπει στο κείμενο να απλωθεί */
     }
 }
