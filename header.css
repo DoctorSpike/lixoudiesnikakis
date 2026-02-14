@@ -45,15 +45,16 @@
     object-fit: cover;
     border-radius: 50%;
     border: 8px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     transition: var(--transition);
 }
 
 .hero-image img:hover {
     transform: scale(1.05);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
     border: 8px solid rgba(255, 255, 255, 0.4);
 }
+
 .location-info h3 {
     font-size: clamp(1.2rem, 3vw, 1.8rem);
     margin-bottom: 1rem;
@@ -79,6 +80,12 @@
     transform: translateY(-5px);
 }
 
+#phon-logo {
+    width: 1.5rem;
+    fill: white;
+    transition: var(--transition);
+}
+
 /* 5. Media Query για μικρές οθόνες (Κεντράρισμα) */
 @media (max-width: 768px) {
     .hero-container {
@@ -86,9 +93,11 @@
         padding-top: 4rem;
         padding-bottom: 4rem;
     }
+
     .hero-text {
         align-items: center; /* Κεντράρει το κείμενο και το κουμπί */
     }
+
     .tagline {
         max-width: 100%; /* Επιτρέπει στο κείμενο να απλωθεί */
     }
