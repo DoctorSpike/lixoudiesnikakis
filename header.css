@@ -1,3 +1,11 @@
+:root {
+    --brand-purple: #982598;
+    --brand-pink: #b8349e;
+    --dark-navy: #15173D;
+    --soft-white: #F1E9E9;
+    --transition: all 0.3s ease;
+}
+
 /* Το Κεντρικό Container (Hero) */
 .hero-container {
     display: grid;

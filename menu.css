@@ -1,48 +1,136 @@
-.cnt-menu-fagita {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));;
-    gap: 1rem;
-    padding: 3rem clamp(1rem, 5%, 5rem);
-    background: linear-gradient(135deg, var(--brand-purple) 0%, var(--brand-pink) 100%);
-    color: white;
+:root {
+    --brand-purple: #982598;
+    --brand-pink: #b8349e;
+    --dark-navy: #15173D;
+    --soft-white: #F1E9E9;
+    --transition: all 0.3s ease;
+}
+
+/* Χρησιμοποιούμε μεταβλητές για μεγέθη που βασίζονται στο viewport */
+:root {
+    --column-width: clamp(3.5rem, 8vw, 5.5rem); /* Δυναμικό πλάτος στηλών τιμής */
+    --border-opacity: 0.2;
+}
+
+.menu__container {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2rem, 5vh, 5rem);
+    padding: clamp(1.5rem, 5%, 8rem);
+    background: linear-gradient(80deg, var(--brand-purple), var(--brand-pink));
+    color: var(--soft-white);
     min-height: 80vh;
 }
 
-#menu-title {
-    grid-column: 1 / -1;
+/* Header Section */
+.menu__main-title {
+    font-size: clamp(3rem, 12vw, 7rem);
     text-align: center;
-    font-size: clamp(2rem, 8vw, 4rem);
-    letter-spacing: 1px;
-    line-height: 1.1;
+    line-height: 0.9;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    background-color: #f1b6d9;
     color: var(--dark-navy);
-    margin: 0;
+    border-radius: 2rem;
+    width: 50%;
+    justify-self: center;
 }
 
-#kreatika {
-    grid-row: 2;
-    column-span: 4;
+.menu__main-title:hover {
+    background-color: #f1b6d9;
+    color: var(--dark-navy);
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
-#kreatikaCategories {
-    column-span: 4;
+
+/* Grid Logic: Responsive χωρίς Media Queries για τα πλάτη */
+.category__grid-row {
+    display: grid;
+    /* Η πρώτη στήλη παίρνει όσο χώρο μένει, οι άλλες 4 είναι ίσες */
+    grid-template-columns: 2fr repeat(4, var(--column-width));
+    gap: 0.5rem;
+    align-items: center;
     width: 100%;
-    font-size: clamp(1rem, 4vw, 2.5rem);
-    letter-spacing: 1px;
 }
 
-.flex-kreat-categ {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    gap: 4rem;
+/* Ρύθμιση για τα Ροφήματα (2 στήλες τιμών αντί για 4) */
+.drinks-section .category__grid-row {
+    grid-template-columns: 2fr repeat(2, var(--column-width));
 }
 
-.flex-kreat-itmes {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    gap: 1rem;
+/* Styling των σειρών */
+.header-row {
+    border-bottom: 0.15rem solid var(--dark-navy);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.category__title {
+    background-color: #f1b6d9;
+    color: var(--dark-navy);
+    padding: 0.4rem 1.2rem;
+    border-radius: 2rem; /* Fully rounded */
+    font-size: clamp(1rem, 2.5vw, 1.6rem);
+    justify-self: start;
+    white-space: nowrap;
+}
+
+.category__title:hover {
+    background: var(--dark-navy);
+    color: white;
+    transform: translateY(-5px);
+}
+
+.col-label {
+    font-weight: 900;
+    color: var(--dark-navy);
+    text-align: center;
+    font-size: clamp(0.85rem, 1.8vw, 1.1rem);
+}
+
+.item-row {
+    border-bottom: 0.05rem solid rgba(255, 255, 255, var(--border-opacity));
+    padding: 0.8rem 0;
+    transition: background 0.3s ease;
+}
+
+.item__name {
+    font-size: clamp(0.95rem, 2vw, 1.2rem);
+    font-weight: 600;
+    padding-right: 0.5rem;
+}
+
+.item__price {
+    text-align: center;
+    font-weight: 700;
+    font-size: clamp(0.85rem, 1.8vw, 1.1rem);
+}
+
+.category__sos {
+    background-color: #f1b6d9;
+    color: var(--dark-navy);
+    padding: 0.4rem 1.2rem;
+    border-radius: 2rem; /* Fully rounded */
+    font-size: clamp(0.85rem, 1.8vw, 1.1rem);
+    justify-self: start;
+    white-space: nowrap;
+}
+
+.category__sos:hover {
+    color: white;
+    background-color: var(--dark-navy);
+}
+
+/* Mobile "Special" handling - αν η οθόνη είναι πολύ μικρή,
+   επιτρέπουμε το οριζόντιο scroll στον πίνακα για να μην "σπάσουν" οι τιμές */
+@media (max-width: 40rem) {
+    .menu__category {
+        overflow-x: auto; /* Scroll αν δεν χωράνε οι 4 τιμές */
+        padding-bottom: 1rem;
+    }
+
+    .category__grid-row {
+        min-width: 35rem; /* Εγγυάται ότι οι τιμές δεν θα κολλήσουν μεταξύ τους */
+    }
 }
