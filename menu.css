@@ -1,0 +1,169 @@
+:root {
+    --brand-purple: #982598;
+    --brand-pink: #b8349e;
+    --dark-navy: #15173D;
+    --soft-white: #F1E9E9;
+    --transition: all 0.3s ease;
+}
+
+/* Χρησιμοποιούμε μεταβλητές για μεγέθη που βασίζονται στο viewport */
+:root {
+    --column-width: clamp(3.5rem, 8vw, 5.5rem); /* Δυναμικό πλάτος στηλών τιμής */
+    --border-opacity: 0.2;
+}
+
+.item-row:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.03); /* Πολύ απαλό λευκό/διάφανο */
+}
+
+.menu__container {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2rem, 5vh, 5rem);
+    padding: clamp(1.5rem, 5%, 8rem);
+    background: linear-gradient(80deg, var(--brand-purple), var(--brand-pink));
+    color: var(--soft-white);
+    min-height: 80vh;
+}
+
+/* Header Section */
+.menu__main-title {
+    font-size: clamp(3rem, 12vw, 7rem);
+    text-align: center;
+    line-height: 0.9;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    background-color: #f1b6d9;
+    color: var(--dark-navy);
+    border-radius: 2rem;
+    width: 50%;
+    justify-self: center;
+}
+
+.menu__main-title:hover {
+    background-color: #f1b6d9;
+    color: var(--dark-navy);
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Grid Logic: Responsive χωρίς Media Queries για τα πλάτη */
+.category__grid-row {
+    display: grid;
+    /* Η πρώτη στήλη παίρνει όσο χώρο μένει, οι άλλες 4 είναι ίσες */
+    grid-template-columns: 2fr repeat(4, var(--column-width));
+    gap: 0.5rem;
+    align-items: center;
+    width: 100%;
+}
+
+/* Ρύθμιση για τα Ροφήματα (2 στήλες τιμών αντί για 4) */
+.drinks-section .category__grid-row {
+    grid-template-columns: 2fr repeat(2, var(--column-width));
+}
+
+/* Styling των σειρών */
+.header-row {
+    border-bottom: 0.15rem solid var(--dark-navy);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.category__title {
+    background-color: #f1b6d9;
+    color: var(--dark-navy);
+    padding: 0.4rem 1.2rem;
+    border-radius: 2rem; /* Fully rounded */
+    font-size: clamp(1rem, 2.5vw, 1.6rem);
+    justify-self: start;
+    white-space: nowrap;
+}
+
+.category__title:hover {
+    background: var(--dark-navy);
+    color: white;
+    transform: translateY(-5px);
+}
+
+.col-label {
+    font-weight: 900;
+    color: var(--dark-navy);
+    text-align: center;
+    font-size: clamp(0.85rem, 1.8vw, 1.1rem);
+}
+
+.item-row {
+    border-bottom: 0.05rem solid rgba(255, 255, 255, var(--border-opacity));
+    padding: 0.8rem 0;
+    transition: background 0.3s ease;
+}
+
+.item__name {
+    font-size: clamp(0.95rem, 2vw, 1.2rem);
+    font-weight: 600;
+    padding-right: 0.5rem;
+}
+
+.item__price {
+    text-align: center;
+    font-weight: 700;
+    font-size: clamp(0.85rem, 1.8vw, 1.1rem);
+}
+
+.category__sos {
+    background-color: #f1b6d9;
+    color: var(--dark-navy);
+    padding: 0.4rem 1.2rem;
+    border-radius: 2rem; /* Fully rounded */
+    font-size: clamp(0.85rem, 1.8vw, 1.1rem);
+    justify-self: start;
+    white-space: nowrap;
+}
+
+.category__sos:hover {
+    color: white;
+    background-color: var(--dark-navy);
+}
+
+@media (max-width: 40rem) {
+    .menu__container {
+        padding: 1.5rem 0.5rem;
+        gap: 2.5rem;
+    }
+
+    .menu__main-title {
+        width: 100%;
+        font-size: 2.5rem;
+    }
+
+    .category__grid-row {
+        grid-template-columns: 1.2fr repeat(4, minmax(42px, 1fr));
+        gap: 2px;
+    }
+
+    .drinks-section .category__grid-row {
+        grid-template-columns: 1fr 65px 65px;
+    }
+
+    .item__name {
+        font-size: 0.85rem;
+    }
+
+    .item__price {
+        font-size: 0.8rem;
+    }
+
+    .col-label {
+        font-size: 0.65rem;
+    }
+
+    .category__title {
+        font-size: 0.95rem;
+        padding: 0.3rem 0.8rem;
+    }
+
+    .menu__category {
+        overflow-x: hidden;
+    }
+}

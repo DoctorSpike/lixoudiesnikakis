@@ -1,3 +1,11 @@
+:root {
+    --brand-purple: #982598;
+    --brand-pink: #b8349e;
+    --dark-navy: #15173D;
+    --soft-white: #F1E9E9;
+    --transition: all 0.3s ease;
+}
+
 /* Το Κεντρικό Container (Hero) */
 .hero-container {
     display: grid;
@@ -5,7 +13,6 @@
     align-items: center;
     gap: 2rem;
     padding: 3rem clamp(1rem, 5%, 5rem);
-
     background: linear-gradient(135deg, var(--brand-purple) 0%, var(--brand-pink) 100%);
     color: white;
     min-height: 80vh;
