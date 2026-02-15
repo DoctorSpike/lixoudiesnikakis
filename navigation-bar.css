@@ -1,0 +1,89 @@
+.button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--dark-navy);
+    color: white;
+    padding: 0.2rem 1.5rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    font-weight: bold;
+    transition: var(--transition);
+    font-size: clamp(1rem, 1vw, 1rem);
+    margin-top: 15px;
+    margin-left: 250px;
+}
+.button2 {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--dark-navy);
+    color: white;
+    padding: 0.2rem 1.5rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    font-weight: bold;
+    transition: var(--transition);
+    font-size: clamp(1rem, 1vw, 1rem);
+    margin-bottom: 0.5rem;
+    margin-left: 80px;
+}
+.button3 {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--dark-navy);
+    color: white;
+    padding: 0.2rem 1.5rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    font-weight: bold;
+    transition: var(--transition);
+    font-size: clamp(1rem, 1vw, 1rem);
+    margin-bottom: 0.5rem;
+    margin-left: 80px;
+}
+.button4 {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--dark-navy);
+    color: white;
+    padding: 0.2rem 1.5rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    font-weight: bold;
+    transition: var(--transition);
+    font-size: clamp(1rem, 1vw, 1rem);
+    margin-bottom: 0.5rem;
+    margin-left: 80px;
+}
+.button5 {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--dark-navy);
+    color: white;
+    padding: 0.2rem 1.5rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    font-weight: bold;
+    transition: var(--transition);
+    font-size: clamp(1rem, 1vw, 1rem);
+    margin-bottom: 0.5rem;
+    margin-left: 80px;
+}
+.cont-navigation-bar {
+    background: linear-gradient(6deg, var(--brand-purple), var(--brand-pink));
+}
+.line {
+    border-top: 5px solid #15173D;
+    border-radius: 5px;
+    width: 65%;
+    margin-left: 219.5px;
+}
