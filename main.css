@@ -1,9 +1,10 @@
 :root {
-    --brand-purple: #982598;
-    --brand-pink: #b8349e;
-    --dark-navy: #15173D;
-    --soft-white: #F1E9E9;
-    --transition: all 0.3s ease;
+    --brand-purple: #5D2E8C;
+    --brand-pink: #A64AC9;
+    --dark-navy: #1F1135;
+    --soft-white: #F8F5FA;
+    --soft-pink: #f1b6d9;
+    --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 body {

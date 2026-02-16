@@ -23,14 +23,27 @@
 </head>
 <body>
 <!-- kane ayto to navigation bar bale oti pisteueis alla vale kai ena button gia na kano thn mlk me to na alazei xroma -->
-<section id="button-section">
+<section id="navigation__bar-section">
     <div class="cont-navigation-bar">
-        <button class="button">Menu</button>
-            <a class="button2" href="https://maps.app.goo.gl/UHyyjUUbbkguRTLh9">Map</a>
-            <button class="button3">Theme</button>
-        <a class="button4" href="https://www.facebook.com/61553032416970/about/?_rdr">Facebook</a>
-        <a class="button5" href="https://www.tiktok.com/@lixoudiesnikakis2k26">TikTok</a>
-        <hr class="line" color="15173D">
+        <div class="menu-button-navBar">
+            <a class="main-buttons-navBar" href="#menu">MENU</a>
+        </div>
+
+        <a class="main-buttons-navBar" href="https://maps.app.goo.gl/UHyyjUUbbkguRTLh9">Map</a>
+
+        <div class="social-media-navBar">
+            <button class="main-buttons-navBar">Social media</button>
+            <ul class="extra-choices-navBar">
+                <li><a class="extra-items-navBar"
+                       href="https://www.facebook.com/61553032416970/about/?_rdr">Facebook</a></li>
+                <li><a class="extra-items-navBar" href="https://www.tiktok.com/@lixoudiesnikakis2k26">TikTok</a></li>
+            </ul>
+        </div>
+
+        <a class="main-buttons-navBar"
+           href="https://search.google.com/local/writereview?placeid=ChIJVxmyoBL_WRMRWVCEGnVMmf8">Add review</a>
+
+        <button class="main-buttons-navBar" id="theme-button">Theme</button>
     </div>
 </section>
 <section id="hero-section">
@@ -56,7 +69,7 @@
     </div>
 </section>
 
-<section class="menu-section">
+<section class="menu-section" id="menu">
     <div class="menu__container">
         <header class="menu__header">
             <h1 class="menu__main-title">MENU</h1>
@@ -227,7 +240,7 @@
                     <span class="item__price">3,50€</span>
                     <span class="item__price">-</span>
                     <span class="item__price">7,50€</span>
-                    </div>
+                </div>
                 <div class="category__grid-row grid-kreatika item-row">
                     <span class="item__name">Πατατόπιτα</span>
                     <span class="item__price">2,00€</span>

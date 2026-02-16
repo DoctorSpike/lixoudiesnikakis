@@ -1,89 +1,88 @@
-.button {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    background: var(--dark-navy);
-    color: white;
-    padding: 0.2rem 1.5rem;
-    border-radius: 12px;
-    text-decoration: none;
-    font-size: clamp(1.1rem, 2vw, 1.4rem);
-    font-weight: bold;
-    transition: var(--transition);
-    font-size: clamp(1rem, 1vw, 1rem);
-    margin-top: 15px;
-    margin-left: 250px;
-}
-.button2 {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    background: var(--dark-navy);
-    color: white;
-    padding: 0.2rem 1.5rem;
-    border-radius: 12px;
-    text-decoration: none;
-    font-size: clamp(1.1rem, 2vw, 1.4rem);
-    font-weight: bold;
-    transition: var(--transition);
-    font-size: clamp(1rem, 1vw, 1rem);
-    margin-bottom: 0.5rem;
-    margin-left: 80px;
-}
-.button3 {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    background: var(--dark-navy);
-    color: white;
-    padding: 0.2rem 1.5rem;
-    border-radius: 12px;
-    text-decoration: none;
-    font-size: clamp(1.1rem, 2vw, 1.4rem);
-    font-weight: bold;
-    transition: var(--transition);
-    font-size: clamp(1rem, 1vw, 1rem);
-    margin-bottom: 0.5rem;
-    margin-left: 80px;
-}
-.button4 {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    background: var(--dark-navy);
-    color: white;
-    padding: 0.2rem 1.5rem;
-    border-radius: 12px;
-    text-decoration: none;
-    font-size: clamp(1.1rem, 2vw, 1.4rem);
-    font-weight: bold;
-    transition: var(--transition);
-    font-size: clamp(1rem, 1vw, 1rem);
-    margin-bottom: 0.5rem;
-    margin-left: 80px;
-}
-.button5 {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    background: var(--dark-navy);
-    color: white;
-    padding: 0.2rem 1.5rem;
-    border-radius: 12px;
-    text-decoration: none;
-    font-size: clamp(1.1rem, 2vw, 1.4rem);
-    font-weight: bold;
-    transition: var(--transition);
-    font-size: clamp(1rem, 1vw, 1rem);
-    margin-bottom: 0.5rem;
-    margin-left: 80px;
-}
 .cont-navigation-bar {
-    background: linear-gradient(6deg, var(--brand-purple), var(--brand-pink));
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    align-items: start;
+    padding: 1rem clamp(1rem, 5%, 5rem);
+    background: linear-gradient(135deg, var(--brand-purple) 0%, var(--brand-pink) 100%);
+    min-height: 20vh;
 }
-.line {
-    border-top: 5px solid #15173D;
-    border-radius: 5px;
-    width: 65%;
-    margin-left: 225px;
+
+.main-buttons-navBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: var(--dark-navy);
+    color: var(--soft-white);
+    padding: 0.8rem 0;
+    border-radius: 50px;
+    text-decoration: none;
+    text-align: center;
+    font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+    font-weight: bold;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+}
+
+.main-buttons-navBar:hover {
+    background: var(--soft-white);
+    color: var(--brand-purple);
+}
+
+.social-media-navBar {
+    position: relative;
+    width: 100%;
+    background-color: var(--dark-navy);
+    border-radius: 50px;
+}
+
+.social-media-navBar:hover {
+    background-color: var(--soft-white);
+}
+
+.extra-choices-navBar {
+    display: none;
+    position: absolute;
+    top: 105%;
+    left: 0;
+    width: 100%;
+    background: var(--dark-navy);
+    padding: 0.5rem 0;
+    border-radius: 15px;
+    list-style: none;
+    z-index: 10;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.social-media-navBar:hover .extra-choices-navBar {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.extra-items-navBar {
+    color: var(--soft-white);
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    font-size: 1rem;
+    border-radius: 50px;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.extra-items-navBar:hover {
+    background: var(--brand-purple);
+    border-radius: 10px;
+    transition-delay: 0s;
+}
+
+.social-media-navBar::after {
+    content: "";
+    position: absolute;
+    top: 80%;
+    left: 0;
+    width: 100%;
+    height: 20px;
 }
