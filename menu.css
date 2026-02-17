@@ -25,7 +25,6 @@
     color: var(--soft-white);
     min-height: 80vh;
 }
-
 /* Header Section */
 .menu__main-title {
     font-size: clamp(3rem, 12vw, 7rem);
