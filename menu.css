@@ -17,6 +17,7 @@
     color: var(--soft-white);
     min-height: 80vh;
 }
+
 /* Header Section */
 .menu__main-title {
     font-size: clamp(3rem, 12vw, 7rem);
@@ -134,7 +135,7 @@
     }
 
     .drinks-section .category__grid-row {
-        grid-template-columns: 1fr 65px 65px;
+        grid-template-columns: 2fr repeat(2, var(--column-width));
     }
 
     .item__name {
