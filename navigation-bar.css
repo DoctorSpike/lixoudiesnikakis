@@ -167,12 +167,25 @@
     }
 }
 
-@media (max-width: 30rem) {
+@media (max-width: 700px) {
     .nb-divider {
         display: none;
     }
 
     .nb-btn span {
         display: none; /* Κρύβει το βελάκι σε πολύ μικρές οθόνες */
+    }
+}
+
+@media (max-width: 500px) {
+    #navigation__bar-section {
+        width: 90%;
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width: 400px) {
+    #navigation__bar-section {
+        width: 100%;
     }
 }
