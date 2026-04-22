@@ -23,52 +23,63 @@
 </head>
 <body>
 <section id="navigation__bar-section">
-    <div class="cont-navigation-bar">
-        <div class="dropdown-container-navBar">
-            <a class="main-buttons-navBar" href="#menu">&diam; MENU &diam;</a>
-            <ul class="extra-choices-navBar">
-                <li class="extra-items-navBar">
-                    <a class="extra-items-navBar" href="#Offers-section-menu">&diam; OFFERS &diam;</a>
-                </li>
-                <li class="extra-items-navBar">
-                    <a class="extra-items-navBar" href="#Specials-section-menu">&diam; SPECIALS &diam;</a>
-                </li>
-                <li class="extra-items-navBar">
-                    <a class="extra-items-navBar" href="#burgers-section-menu">&diam; BURGERS &diam;</a>
-                </li>
-                <li class="extra-items-navBar">
-                    <a class="extra-items-navBar" href="#orektia-section-menu">&diam; ΟΡΕΚΤΙΚΑ &diam;</a>
-                </li>
-                <li class="extra-items-navBar">
-                    <a class="extra-items-navBar" href="#kreatika-section-menu">&diam; ΚΡΕΑΤΙΚΑ &diam;</a>
-                </li>
-                <li class="extra-items-navBar">
-                    <a class="extra-items-navBar" href="#salates-section-menu">&diam; ΣΑΛΑΤΕΣ &diam;</a>
-                </li>
-                <li class="extra-items-navBar">
-                    <a class="extra-items-navBar" href="#rofimata-section-menu">&diam; ΡΟΦΗΜΑΤΑ &diam;</a>
-                </li>
-            </ul>
+    <nav class="cont-navigation-bar">
+        <div class="navigation-bar-grid">
+            <!-- LEFT -->
+
+            <div class="nb-left">
+                <div class="navigation-bar-item1">
+                    <div class="dropdown">
+                        <button class="nb-btn">MENU <span class="chevron">▾</span></button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#Offers-section-menu">Offers</a></li>
+                            <li><a class="dropdown-item" href="#Specials-section-menu">Specials</a></li>
+                            <li><a class="dropdown-item" href="#burgers-section-menu">Burgers</a></li>
+                            <li><a class="dropdown-item" href="#orektia-section-menu">Ορεκτικά</a></li>
+                            <li><a class="dropdown-item" href="#kreatika-section-menu">Κρεατικά</a></li>
+                            <li><a class="dropdown-item" href="#salates-section-menu">Σαλάτες</a></li>
+                            <li><a class="dropdown-item" href="#rofimata-section-menu">Ροφήματα</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="navigation-bar-item2">
+                <div class="nb-divider"></div>
+                <a class="nb-btn" href="https://maps.app.goo.gl/UHyyjUUbbkguRTLh9" target="_blank">MAP</a>
+            </div>
+
+            <!-- CENTER BRAND -->
+            <div class="navigation-bar-item3">
+                <span class="nb-brand">✦ΛΙΧΟΥΔΙΕΣ ΝΙΚΑΚΗΣ✦</span>
+            </div>
+            <!-- RIGHT -->
+            <div class="nb-right">
+                <div class="navigation-bar-item4">
+                    <div class="dropdown">
+                        <button class="nb-btn">SOCIAL <span class="chevron">▾</span></button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.facebook.com/61553032416970/about/?_rdr"
+                                   target="_blank">Facebook</a></li>
+                            <li><a class="dropdown-item" href="https://www.tiktok.com/@lixoudiesnikakis2k26"
+                                   target="_blank">TikTok</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="nb-divider"></div>
+                <div class="navigation-bar-item5">
+                    <a class="nb-btn"
+                       href="https://search.google.com/local/writereview?placeid=ChIJVxmyoBL_WRMRWVCEGnVMmf8"
+                       target="_blank">REVIEW</a>
+                </div>
+                <div class="nb-divider"></div>
+                <div class="navigation-bar-item6">
+                    <button class="nb-accent" id="theme-button">THEME</button>
+                </div>
+            </div>
         </div>
+    </nav>
 
-        <a class="main-buttons-navBar" href="https://maps.app.goo.gl/UHyyjUUbbkguRTLh9">&diam; MAP &diam;</a>
-
-        <div class="dropdown-container-navBar">
-            <button class="main-buttons-navBar">&diam; SOCIAL MEDIA &diam;</button>
-            <ul class="extra-choices-navBar">
-                <li><a class="extra-items-navBar"
-                       href="https://www.facebook.com/61553032416970/about/?_rdr">&diam; FACEBOOK &diam;</a></li>
-                <li><a class="extra-items-navBar" href="https://www.tiktok.com/@lixoudiesnikakis2k26">&diam; TIKTOK
-                    &diam;</a></li>
-            </ul>
-        </div>
-
-        <a class="main-buttons-navBar"
-           href="https://search.google.com/local/writereview?placeid=ChIJVxmyoBL_WRMRWVCEGnVMmf8">&diam; ADD REVIEW
-            &diam;</a>
-
-        <button class="main-buttons-navBar" id="theme-button">&diam; THEME &diam;</button>
-    </div>
 </section>
 <section id="hero-section">
     <div class="hero-container">
@@ -105,7 +116,7 @@
                     <h2 class="category__title">&diam; OFFERS &diam;</h2>
                 </div>
                 <div class="category__grid-row grid-specials item-row">
-                    <span class="item__name">ΚΑΘΕ ΠΕΜΠΤΗ, ΔΩΡΕΑΝ 1 ΡΟΦΗΜΑ 330ml ΜΕ ΤΗΝ ΣΚΕΠΑΣΤΗ ΓΙΓΑΣ !</span>
+                    <span class="item__name">ΚΑΘΕ ΠΕΜΠΤΗ, ΔΩΡΕΑΝ 1 ΡΟΦΗΜΑ 330ml ΜΕ ΤΗ ΣΚΕΠΑΣΤΗ ΓΙΓΑΣ !</span>
                 </div>
                 <div class="category__grid-row grid-specials item-row">
                     <span class="item__name">ΠΙΤΑ ΓΥΡΟ ΧΟΙΡΙΝΟ ΜΕ ΑΛΟΙΦΗ + COCA COLA ZERO 500ml ΑΠΟ 5,50€ ΜΟΝΟ 5,20€</span>

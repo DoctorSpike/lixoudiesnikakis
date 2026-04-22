@@ -8,9 +8,10 @@
 }
 
 body {
-    margin: 0;
     font-family: "Nunito", sans-serif;
-    background-color: var(--soft-white);
+    background: linear-gradient(135deg, var(--brand-purple) 0%, var(--brand-pink) 100%);
+    min-height: 100vh;
+    padding-top: 80px;
 }
 
 * {

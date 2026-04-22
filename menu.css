@@ -13,7 +13,7 @@
     flex-direction: column;
     gap: clamp(2rem, 5vh, 5rem);
     padding: clamp(1.5rem, 5%, 8rem);
-    background: linear-gradient(135deg, var(--brand-purple), var(--brand-pink));
+    background: linear-gradient(135deg, var(--brand-purple), var(--brand-pink) 100%);
     color: var(--soft-white);
     min-height: 80vh;
 }

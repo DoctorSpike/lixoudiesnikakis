@@ -1,115 +1,178 @@
+:root {
+    --transition: all 0.2s ease;
+    --nav-height: 3.25rem;
+}
 
 #navigation__bar-section {
-    position: fixed !important;
-    width: 100%;
+    position: fixed;
+    width: 70%;
     top: 0;
     left: 0;
+    right: 0;
     z-index: 1000;
+    padding: 0.75rem 1.5rem;
+    box-sizing: border-box;
+    max-width: 1200px;
+    margin: 1rem auto;
 }
 
 .cont-navigation-bar {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 0.5rem;
-    align-items: center;
-    padding: 1vh clamp(1rem, 5%, 5rem);
-    background: linear-gradient(135deg, var(--brand-purple) 0%, var(--brand-pink) 100%);
-    min-height: 10vh;
-    border-bottom: 0.1rem solid var(--dark-navy);
-    box-shadow: 0 0.6rem 2rem rgba(0, 0, 0, 0.15);
-}
-
-.main-buttons-navBar {
     display: flex;
-    justify-content: center;
+    height: var(--nav-height);
+    background: rgba(183, 32, 197, 0.24); /*0.05*/
+    border: 0.05rem solid rgba(232, 19, 250, 0.3); /*0.12*/
+    border-radius: 0.875rem;
+    backdrop-filter: blur(1rem);
+    -webkit-backdrop-filter: blur(1rem);
+    padding: 0 1rem;
+}
+
+.navigation-bar-grid {
+    display: grid;
+    /* 6 στήλες - Προσαρμόζουμε το πλάτος τους ανάλογα με το περιεχόμενο */
+    grid-template-columns: auto auto 1fr auto auto auto;
+    align-items: stretch; /* Αναγκάζει όλα τα cells να έχουν το ίδιο ύψος */
+    width: 100%;
+    gap: 0.25rem;
+}
+
+/* Κοινή βάση για όλα τα κουμπιά και τα items για να είναι ευθυγραμμισμένα */
+.navigation-bar-item1, .navigation-bar-item2, .navigation-bar-item3,
+.navigation-bar-item4, .navigation-bar-item5, .navigation-bar-item6,
+.nb-left, .nb-right {
+    display: flex;
     align-items: center;
-    width: 100%;
-    background: var(--dark-navy);
-    color: var(--soft-white);
-    padding: 0.8rem 0;
-    border-radius: 3rem;
-    text-decoration: none;
-    text-align: center;
-    font-size: clamp(0.75rem, 1.2vw, 1.2rem);
-    font-weight: bold;
-    transition: var(--transition);
+    height: 100%;
+}
+
+.nb-left, .nb-right {
+    gap: 0.125rem;
+}
+
+/* Το Brand στο κέντρο */
+.navigation-bar-item3 {
+    justify-content: center;
+}
+
+.nb-brand {
+    font-size: clamp(0.6rem, 1vw, 0.75rem);
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    color: rgba(255, 255, 255, 0.85);
+    white-space: nowrap;
+}
+
+/* Dividers με σχετικό ύψος */
+.nb-divider {
+    width: 0.05rem;
+    height: 40%; /* 40% του ύψους της μπάρας */
+    background: rgba(255, 255, 255, 0.12);
+    margin: 0 0.5rem;
+    align-self: center;
+}
+
+/* Buttons: Χρησιμοποιούμε flex για να κεντράρουμε το κείμενο μέσα τους */
+.nb-btn, .nb-accent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70%; /* Καταλαμβάνουν το μεγαλύτερο μέρος του ύψους */
+    padding: 0 0.85rem;
+    border-radius: 0.5rem;
+    background: transparent;
     border: none;
+    color: rgba(255, 255, 255, 0.55);
+    font-size: clamp(0.55rem, 0.85vw, 0.7rem);
+    font-weight: 600;
+    letter-spacing: 0.09em;
     cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    white-space: nowrap;
+    font-family: inherit;
+    line-height: 1;
 }
 
-.main-buttons-navBar:hover {
-    background: var(--soft-white);
-    color: var(--brand-purple);
+.nb-btn:hover {
+    background: rgba(255, 255, 255, 0.09);
+    color: rgba(255, 255, 255, 0.95);
 }
 
-.dropdown-container-navBar {
+.nb-accent {
+    background: rgba(255, 255, 255, 0.1);
+    border: 0.05rem solid rgba(255, 255, 255, 0.18);
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.nb-accent:hover {
+    background: rgba(255, 255, 255, 0.18);
+    color: #fff;
+}
+
+/* Dropdown Logic */
+.dropdown {
     position: relative;
-    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
-.dropdown-container-navBar:hover .main-buttons-navBar {
-    background: var(--soft-white);
-    color: var(--brand-purple);
-}
-
-.extra-choices-navBar {
+.dropdown-menu {
     opacity: 0;
     visibility: hidden;
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
     position: absolute;
-    top: 100%;
+    top: calc(100% + 0.5rem);
     left: 0;
-    width: 100%;
-    background: var(--dark-navy);
-    padding: 0.5rem 0;
-    border-radius: 1rem;
+    background: #1a1a2e;
+    border: 0.05rem solid rgba(255, 255, 255, 0.12);
+    border-radius: 0.625rem;
+    padding: 0.375rem;
+    min-width: 10rem;
+    z-index: 200;
+    transition: var(--transition);
+    transform: translateY(-0.25rem);
     list-style: none;
-    z-index: 10;
-    box-shadow: 0 0.5rem 1.2rem rgba(0, 0, 0, 0.3);
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    overflow: hidden;
 }
 
-.dropdown-container-navBar:hover .extra-choices-navBar {
+.dropdown:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
+    transform: translateY(0);
 }
 
-.extra-items-navBar {
-    color: var(--soft-white);
-    text-decoration: none;
+.dropdown-item {
     display: block;
-    text-align: center;
-    padding: 0.6rem 5%;
-    font-size: clamp(0.7rem, 1vw, 1rem);
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.375rem;
+    color: rgba(255, 255, 255, 0.55);
+    font-size: clamp(0.55rem, 0.8vw, 0.68rem);
+    font-weight: 600;
+    text-decoration: none;
     transition: var(--transition);
 }
 
-.extra-items-navBar:hover {
-    background: var(--brand-purple);
+.dropdown-item:hover {
+    background: rgba(255, 255, 255, 0.07);
+    color: #fff;
 }
 
-.dropdown-container-navBar::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    height: 1.5vh;
-}
-
+/* Responsiveness */
 @media (max-width: 48rem) {
-    .cont-navigation-bar {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0.4rem;
+    .nb-brand {
+        display: none;
+    }
+
+    .navigation-bar-grid {
+        grid-template-columns: auto auto 1fr auto auto;
     }
 }
 
-@media (max-width: 22rem) {
-    .cont-navigation-bar {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.2rem;
+@media (max-width: 30rem) {
+    .nb-divider {
+        display: none;
+    }
+
+    .nb-btn span {
+        display: none; /* Κρύβει το βελάκι σε πολύ μικρές οθόνες */
     }
 }
