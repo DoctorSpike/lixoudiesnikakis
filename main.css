@@ -5,6 +5,8 @@
     --soft-white: #F8F5FA;
     --soft-pink: #f1b6d9;
     --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --navBarBackground: rgba(183, 32, 197, 0.24);
+    --navBarBorderColor: rgba(232, 19, 250, 0.3)
 }
 
 .dark-mode {
@@ -13,6 +15,8 @@
     --dark-navy: #7ae2cf;
     --soft-white: #F8F5FA;
     --soft-pink: #f5eedd;
+    --navBarBackground: rgba(23, 204, 164, 0.24);
+    --navBarBorderColor: rgba(19, 250, 231, 0.3)
 }
 
 body {
@@ -31,4 +35,11 @@ body {
 html, body {
     overflow-x: hidden; /* Εγγύηση ότι δεν θα υπάρξει οριζόντιο scroll */
     width: 100%;
+}
+
+.main-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 4rem;
 }
