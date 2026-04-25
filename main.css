@@ -7,12 +7,12 @@
     --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-:root {
-    --white-theame-purple: #080616;
-    --white-theme-pink: #1A1953;
-    --whete-theme-navy: #162E93;
-    --white-theme-white: #F8F5FA;
-    --white-theme-soft-pink: #2F2FE4;
+.dark-mode {
+    --brand-purple: #06202b;
+    --brand-pink: #077a7d;
+    --dark-navy: #7ae2cf;
+    --soft-white: #F8F5FA;
+    --soft-pink: #f5eedd;
 }
 
 body {
