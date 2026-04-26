@@ -3,7 +3,7 @@
     --brand-pink: #A64AC9;
     --dark-navy: #1F1135;
     --soft-white: #F8F5FA;
-    --soft-pink: #f1b6d9;
+    --soft-pink: #f5c8e5;
     --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     --navBarBackground: rgba(183, 32, 197, 0.24);
     --navBarBorderColor: rgba(232, 19, 250, 0.3)
@@ -23,7 +23,8 @@ body {
     font-family: "Nunito", sans-serif;
     background: linear-gradient(135deg, var(--brand-purple) 0%, var(--brand-pink) 100%);
     min-height: 100vh;
-    padding-top: 80px;
+    /* fix: was 80px (pixels), now uses rem */
+    padding-top: clamp(4rem, 8vh, 6rem);
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, auto);
@@ -41,7 +42,7 @@ body {
 }
 
 html, body {
-    overflow-x: hidden; /* Εγγύηση ότι δεν θα υπάρξει οριζόντιο scroll */
+    overflow-x: hidden;
     width: 100%;
 }
 

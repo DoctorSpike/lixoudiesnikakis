@@ -5,22 +5,21 @@
 
 #navigation__bar-section {
     position: fixed;
-    width: 70%;
+    /* fix: was hardcoded 70% — now fluid with a max cap */
+    width: min(70%, 75rem);
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
     padding: 0.75rem 1.5rem;
     box-sizing: border-box;
-    max-width: 1200px;
     margin: 1rem auto;
 }
 
 .navigation-bar-grid {
     display: grid;
-    /* 6 στήλες - Προσαρμόζουμε το πλάτος τους ανάλογα με το περιεχόμενο */
     grid-template-columns: repeat(2, auto) 3fr repeat(3, auto);
-    align-items: stretch; /* Αναγκάζει όλα τα cells να έχουν το ίδιο ύψος */
+    align-items: stretch;
     width: 100%;
     gap: 0.25rem;
 }
@@ -28,16 +27,14 @@
 .cont-navigation-bar {
     display: flex;
     height: var(--nav-height);
-    background: var(--navBarBackground); /*0.05*/
-    border: 0.05rem solid var(--navBarBorderColor); /*0.12*/
+    background: var(--navBarBackground);
+    border: 0.05rem solid var(--navBarBorderColor);
     border-radius: 0.875rem;
     backdrop-filter: blur(1rem);
     -webkit-backdrop-filter: blur(1rem);
     padding: 0 1rem;
 }
 
-
-/* Κοινή βάση για όλα τα κουμπιά και τα items για να είναι ευθυγραμμισμένα */
 .navigation-bar-item1, .navigation-bar-item2, .navigation-bar-item3,
 .navigation-bar-item4, .navigation-bar-item5, .navigation-bar-item6,
 .nb-left, .nb-right {
@@ -50,13 +47,13 @@
     gap: 0.125rem;
 }
 
-/* Το Brand στο κέντρο */
 .navigation-bar-item3 {
     justify-content: center;
 }
 
 .nb-brand {
-    font-size: clamp(0.9rem, 1.2vw, 0.85rem);
+    /* fix: was clamp(0.9rem, 1.2vw, 0.85rem) — min > max, broken */
+    font-size: clamp(0.75rem, 1.2vw, 0.95rem);
     font-weight: 600;
     letter-spacing: 0.2em;
     color: rgba(255, 255, 255, 0.85);
@@ -64,21 +61,19 @@
     text-align: center;
 }
 
-/* Dividers με σχετικό ύψος */
 .nb-divider {
     width: 0.05rem;
-    height: 40%; /* 40% του ύψους της μπάρας */
+    height: 40%;
     background: rgba(255, 255, 255, 0.12);
     margin: 0 0.5rem;
     align-self: center;
 }
 
-/* Buttons: Χρησιμοποιούμε flex για να κεντράρουμε το κείμενο μέσα τους */
 .nb-btn, .nb-accent {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 70%; /* Καταλαμβάνουν το μεγαλύτερο μέρος του ύψους */
+    height: 70%;
     padding: 0 0.85rem;
     border-radius: 0.5rem;
     background: transparent;
@@ -159,6 +154,14 @@
 }
 
 /* Responsiveness */
+
+/* fix: added intermediate breakpoint for 600–850px range */
+@media (max-width: 55rem) {
+    #navigation__bar-section {
+        width: min(85%, 75rem);
+    }
+}
+
 @media (max-width: 48rem) {
     .nb-brand {
         display: none;
@@ -169,24 +172,24 @@
     }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 43.75rem) {
     .nb-divider {
         display: none;
     }
 
     .nb-btn span {
-        display: none; /* Κρύβει το βελάκι σε πολύ μικρές οθόνες */
+        display: none;
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 31.25rem) {
     #navigation__bar-section {
         width: 90%;
         padding: 0.5rem;
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 25rem) {
     #navigation__bar-section {
         width: 100%;
     }

@@ -7,9 +7,8 @@
     gap: 3rem;
     padding: 4rem clamp(1rem, 8%, 10rem);
     align-items: start;
-    background: linear-gradient(135deg, var(--brand-purple) 0%, var(--brand-pink) 100%);;
+    background: linear-gradient(135deg, var(--brand-purple) 0%, var(--brand-pink) 100%);
 }
-
 
 .footer-company-info {
     grid-area: brand;
@@ -23,14 +22,14 @@
     grid-area: copy;
 }
 
-
 #footer-par-company-info {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     text-align: center;
     line-height: 1.7;
-    color: var(--soft-pink);
+    /* fix: was --soft-pink which can fail contrast on purple bg; use --soft-white for body text */
+    color: var(--soft-white);
 }
 
 #footer-company-info-logo-img {
@@ -46,14 +45,13 @@
     font-weight: 800;
     margin-bottom: 0.5rem;
     display: block;
-    color: var(--brand-pink); /* Ένα χρυσό/κίτρινο για το slogan */
+    color: var(--soft-pink);
 }
 
-/* 4. Practical Info & Hours (Η "Κάρτα") */
 .footer-practical-info {
     background: var(--navBarBackground);
     padding: 2rem;
-    border-radius: 20px;
+    border-radius: 1.25rem;
     backdrop-filter: blur(5px);
     border: 1px solid var(--navBarBorderColor);
 }
@@ -74,18 +72,19 @@
     padding: 0.6rem 0;
     border-bottom: 1px solid var(--navBarBorderColor);
     font-size: 1.1rem;
+    /* fix: ensure readable contrast */
+    color: var(--soft-white);
 }
 
 .list-items-hours-days:last-child {
     border-bottom: none;
 }
 
-/* 5. Copyright Section */
 .copyrights-footer {
     text-align: center;
     padding-top: 2rem;
     margin-top: 1rem;
-    border-top: 1px solid var(--brand-pink);
+    border-top: 1px solid var(--soft-pink);
     font-size: 0.9rem;
     opacity: 0.8;
 }
@@ -104,8 +103,7 @@
     text-decoration: underline;
 }
 
-/* 6. Responsive Design για Κινητά */
-@media (max-width: 850px) {
+@media (max-width: 53.125rem) {
     .footer-div-cont-grid {
         grid-template-columns: 1fr;
         grid-template-areas:

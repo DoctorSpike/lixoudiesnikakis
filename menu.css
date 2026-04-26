@@ -1,11 +1,10 @@
-/* Χρησιμοποιούμε μεταβλητές για μεγέθη που βασίζονται στο viewport */
 :root {
-    --column-width: clamp(3.5rem, 8vw, 5.5rem); /* Δυναμικό πλάτος στηλών τιμής */
+    --column-width: clamp(3.5rem, 8vw, 5.5rem);
     --border-opacity: 0.2;
 }
 
 .item-row:nth-child(even) {
-    background-color: rgba(255, 255, 255, 0.03); /* Πολύ απαλό λευκό/διάφανο */
+    background-color: rgba(255, 255, 255, 0.03);
 }
 
 .menu__container {
@@ -18,7 +17,6 @@
     min-height: 80vh;
 }
 
-/* Header Section */
 .menu__main-title {
     font-size: clamp(3rem, 12vw, 7rem);
     text-align: center;
@@ -30,6 +28,10 @@
     border-radius: 2rem;
     width: 50%;
     justify-self: center;
+    /* fix: added will-change and transform-origin to prevent layout shift on hover */
+    will-change: transform;
+    transform-origin: center;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .menu__main-title:hover {
@@ -39,23 +41,18 @@
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
-
-/* Grid Logic: Responsive χωρίς Media Queries για τα πλάτη */
 .category__grid-row {
     display: grid;
-    /* Η πρώτη στήλη παίρνει όσο χώρο μένει, οι άλλες 4 είναι ίσες */
     grid-template-columns: 2fr repeat(4, var(--column-width));
     gap: 0.5rem;
     align-items: center;
     width: 100%;
 }
 
-/* Ρύθμιση για τα Ροφήματα (2 στήλες τιμών αντί για 4) */
 .drinks-section .category__grid-row {
     grid-template-columns: 2fr repeat(2, var(--column-width));
 }
 
-/* Styling των σειρών */
 .header-row {
     border-bottom: 0.15rem solid var(--dark-navy);
     padding-bottom: 1rem;
@@ -66,10 +63,13 @@
     background-color: var(--soft-pink);
     color: var(--dark-navy);
     padding: 0.4rem 1.2rem;
-    border-radius: 2rem; /* Fully rounded */
+    border-radius: 2rem;
     font-size: clamp(1rem, 2.5vw, 1.6rem);
     justify-self: start;
     white-space: nowrap;
+    will-change: transform;
+    transform-origin: left center;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
 .category__title:hover {
@@ -107,10 +107,11 @@
     background-color: var(--soft-pink);
     color: var(--dark-navy);
     padding: 0.4rem 1.2rem;
-    border-radius: 2rem; /* Fully rounded */
+    border-radius: 2rem;
     font-size: clamp(0.85rem, 1.8vw, 1.1rem);
     justify-self: start;
     white-space: nowrap;
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 .category__sos:hover {
@@ -118,25 +119,21 @@
     background-color: var(--dark-navy);
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 68.75rem) {
     .menu__main-title {
         width: 70%;
         font-size: 1.5rem;
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 50rem) {
     .menu__container {
         padding: 1.5rem 0.5rem;
         gap: 2.5rem;
     }
 
-    /*.menu__main-title {
-        width: 70%;
-        font-size: 1.5rem;
-    }*/
     .category__grid-row {
-        grid-template-columns: 1.2fr repeat(4, minmax(42px, 1fr));
+        grid-template-columns: 1.2fr repeat(4, minmax(2.625rem, 1fr));
         gap: 2px;
     }
 
