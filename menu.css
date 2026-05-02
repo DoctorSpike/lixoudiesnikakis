@@ -29,10 +29,28 @@
     color: var(--dark-navy);
     border-radius: 2rem;
     width: 50%;
-    justify-self: center;
+    margin-left: 19rem;
 }
 
 .menu__main-title:hover {
+    background-color: #f1b6d9;
+    color: var(--dark-navy);
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+.menu__main-title2 {
+    font-size: clamp(3rem, 5vw, 7rem);
+    text-align: center;
+    line-height: 0.9;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    background-color: #f1b6d9;
+    color: var(--dark-navy);
+    border-radius: 2rem;
+    width: 50%;
+    margin-left: 19rem;
+}
+.menu__main-title2:hover {
     background-color: #f1b6d9;
     color: var(--dark-navy);
     transform: scale(1.05);
