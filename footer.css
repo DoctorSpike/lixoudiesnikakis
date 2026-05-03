@@ -1,0 +1,125 @@
+.footer-div-cont-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-areas:
+        "brand info"
+        "copy  copy";
+    gap: 3rem;
+    padding: 4rem clamp(1rem, 8%, 10rem);
+    align-items: start;
+    background: linear-gradient(135deg, var(--brand-purple) 0%, var(--brand-pink) 100%);
+}
+
+.footer-company-info {
+    grid-area: brand;
+}
+
+.footer-practical-info {
+    grid-area: info;
+}
+
+.copyrights-footer {
+    grid-area: copy;
+}
+
+#footer-par-company-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: center;
+    line-height: 1.7;
+    /* fix: was --soft-pink which can fail contrast on purple bg; use --soft-white for body text */
+    color: var(--soft-white);
+}
+
+#footer-company-info-logo-img {
+    max-width: 20%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 0.2rem 0.4rem var(--dark-navy);
+}
+
+#span-par-company-info {
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    display: block;
+    color: var(--soft-pink);
+}
+
+.footer-practical-info {
+    background: var(--navBarBackground);
+    padding: 2rem;
+    border-radius: 1.25rem;
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--navBarBorderColor);
+}
+
+.span-footer {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: var(--brand-purple);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.list-items-hours-days {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--navBarBorderColor);
+    font-size: 1.1rem;
+    /* fix: ensure readable contrast */
+    color: var(--soft-white);
+}
+
+.list-items-hours-days:last-child {
+    border-bottom: none;
+}
+
+.copyrights-footer {
+    text-align: center;
+    padding-top: 2rem;
+    margin-top: 1rem;
+    border-top: 1px solid var(--soft-pink);
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+#footer-copyright-insta-link {
+    color: var(--dark-navy);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#par-copyright {
+    color: var(--dark-navy);
+}
+
+#footer-copyright-insta-link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 53.125rem) {
+    .footer-div-cont-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "brand"
+            "info"
+            "copy";
+        text-align: center;
+        gap: 2.5rem;
+    }
+
+    #footer-par-company-info {
+        align-items: center;
+        text-align: center;
+    }
+
+    .list-items-hours-days {
+        font-size: 1rem;
+    }
+}
